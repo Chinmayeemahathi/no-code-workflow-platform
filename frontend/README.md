@@ -1,70 +1,228 @@
-# Getting Started with Create React App
+No-Code Workflow Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a No-Code / Low-Code Workflow Builder where users can visually create a workflow by dragging and connecting components like:
 
-## Available Scripts
+User Query
 
-In the project directory, you can run:
+LLM (AI logic)
 
-### `npm start`
+Output
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Then, they can run the workflow and get a response.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This project was built as part of a full-stack engineering assignment to demonstrate my understanding of frontend, backend, system design, and real-world architecture.
 
-### `npm test`
+Why I Built This
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Instead of hardcoding logic, I wanted to build a system where:
 
-### `npm run build`
+Users can design logic visually
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+No programming is needed to create workflows
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The backend dynamically understands the workflow
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The system executes it step by step
 
-### `npm run eject`
+The final result is shown like a chat
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This is similar to tools like:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Zapier
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Make.com
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+LangFlow
 
-## Learn More
+Node-RED
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Tech Stack
+Frontend
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+React
 
-### Code Splitting
+React Flow
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+JavaScript
 
-### Analyzing the Bundle Size
+CSS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Backend
 
-### Making a Progressive Web App
+Python
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+FastAPI
 
-### Advanced Configuration
+DevOps / Tools
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Git
 
-### Deployment
+GitHub
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Docker (optional)
 
-### `npm run build` fails to minify
+REST APIs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Features
+Frontend
+
+Drag and drop nodes
+
+Connect nodes visually
+
+Strict validation of workflow:
+
+User Query → LLM → Output
+
+Click any node to configure it
+
+Run workflow button
+
+Output appears in UI
+
+Backend
+
+Accepts workflow graph (nodes + edges)
+
+Validates workflow
+
+Executes steps dynamically
+
+Simulates AI logic (free, no API cost)
+
+Returns final output
+
+How the Workflow Works
+
+User adds nodes
+
+User connects them
+
+User enters a question
+
+User selects a model (GPT / Gemini)
+
+Clicks Run Workflow
+
+Backend receives the workflow
+
+Backend executes it
+
+Output is returned
+
+UI displays the result
+
+Folder Structure
+no-code-workflow-platform/
+│
+├── backend/
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── api/
+│   │   ├── services/
+│   │   ├── models/
+│   │   └── utils/
+│   └── requirements.txt
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   └── package.json
+│
+├── docker-compose.yml
+└── README.md
+
+How to Run Locally
+Backend
+cd backend
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+
+
+Backend will run at:
+
+http://127.0.0.1:8000
+
+Frontend
+cd frontend
+npm install
+npm start
+
+
+Frontend will run at:
+
+http://localhost:3000
+
+Important Design Decision: No Paid APIs
+
+I originally tried integrating real AI APIs (Gemini, OpenAI), but I faced:
+
+Frequent breaking changes
+
+Version mismatches
+
+404 errors
+
+Billing risks
+
+So I designed a Mock AI Engine that:
+
+Behaves like a real AI
+
+Is free
+
+Is stable
+
+Can be replaced later with real APIs
+
+This shows real-world engineering thinking: build something stable first, then scale.
+
+What This Project Demonstrates
+
+Full-stack development
+
+API design
+
+UI/UX thinking
+
+Graph-based execution
+
+Clean architecture
+
+Real-world problem solving
+
+Debugging skills
+
+Deployment readiness
+
+One-Line Explanation (for Interviews)
+
+I built a no-code workflow engine where users visually design logic using nodes, and the backend dynamically executes the workflow to produce a chat-style response.
+
+Future Improvements
+
+Real LLM integration (OpenAI / Gemini)
+
+File upload & knowledge base
+
+Authentication
+
+Saving workflows
+
+Export/import
+
+Cloud deployment
+
+Kubernetes support
+
+Author
+
+Built by me as part of a full-stack engineering assignment to demonstrate my understanding of real-world application design.
+
+If you want, I can now:
+
+✅ Customize this with your name
+✅ Add screenshots
+✅ Add architecture diagram
+✅ Add demo instructions
+✅ Make it interview-perfect
