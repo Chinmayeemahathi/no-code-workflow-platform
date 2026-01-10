@@ -31,25 +31,7 @@ Git
 GitHub
 REST APIs
 
-Project Structure
-no-code-workflow-platform/
-│
-├── backend/
-│   ├── app/
-│   │   ├── main.py
-│   │   ├── api/
-│   │   ├── services/
-│   │   ├── models/
-│   │   └── utils/
-│   └── requirements.txt
-│
-├── frontend/
-│   ├── src/
-│   ├── public/
-│   └── package.json
-│
-├── docker-compose.yml
-└── README.md
+
 
 How the System Works
 
