@@ -1,4 +1,4 @@
-No-Code / Low-Code Workflow Platform
+🧠 No-Code / Low-Code GenAI Workflow Platform
 
 This project is a No-Code / Low-Code Workflow Builder where users can visually create workflows using drag-and-drop components and execute them without writing any code.
 
@@ -140,5 +140,6 @@ Cloud deployment
 Kubernetes support
 
 Author
+Full Stack Developer (Aspiring)
 Adurthi Mahathi Chinmayee, Built as part of a full-stack engineering assignment to demonstrate system design and real-world development skills.
 
