@@ -140,5 +140,10 @@ Cloud deployment
 Kubernetes support
 
 Author
+
+
 Full Stack Developer (Aspiring)
+
+
 Adurthi Mahathi Chinmayee, Built as part of a full-stack engineering assignment to demonstrate system design and real-world development skills.
+
