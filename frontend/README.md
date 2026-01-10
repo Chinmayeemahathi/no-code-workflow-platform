@@ -1,118 +1,37 @@
-No-Code Workflow Platform
+No-Code / Low-Code Workflow Platform
 
-This project is a No-Code / Low-Code Workflow Builder where users can visually create a workflow by dragging and connecting components like:
+This project is a No-Code / Low-Code Workflow Builder where users can visually create workflows using drag-and-drop components and execute them without writing any code.
 
-User Query
+Users can:
 
-LLM (AI logic)
+Add nodes (User Query, LLM, Output)
+Connect them visually
+Configure each node
+Run the workflow
+Get a response
 
-Output
-
-Then, they can run the workflow and get a response.
-
-This project was built as part of a full-stack engineering assignment to demonstrate my understanding of frontend, backend, system design, and real-world architecture.
-
-Why I Built This
-
-Instead of hardcoding logic, I wanted to build a system where:
-
-Users can design logic visually
-
-No programming is needed to create workflows
-
-The backend dynamically understands the workflow
-
-The system executes it step by step
-
-The final result is shown like a chat
-
-This is similar to tools like:
-
-Zapier
-
-Make.com
-
-LangFlow
-
-Node-RED
+This project demonstrates full-stack engineering, system design, and graph-based execution logic.
 
 Tech Stack
+
 Frontend
 
 React
-
 React Flow
-
 JavaScript
-
 CSS
 
 Backend
 
 Python
-
 FastAPI
-
-DevOps / Tools
+Tools
 
 Git
-
 GitHub
-
-Docker (optional)
-
 REST APIs
 
-Features
-Frontend
-
-Drag and drop nodes
-
-Connect nodes visually
-
-Strict validation of workflow:
-
-User Query → LLM → Output
-
-Click any node to configure it
-
-Run workflow button
-
-Output appears in UI
-
-Backend
-
-Accepts workflow graph (nodes + edges)
-
-Validates workflow
-
-Executes steps dynamically
-
-Simulates AI logic (free, no API cost)
-
-Returns final output
-
-How the Workflow Works
-
-User adds nodes
-
-User connects them
-
-User enters a question
-
-User selects a model (GPT / Gemini)
-
-Clicks Run Workflow
-
-Backend receives the workflow
-
-Backend executes it
-
-Output is returned
-
-UI displays the result
-
-Folder Structure
+Project Structure
 no-code-workflow-platform/
 │
 ├── backend/
@@ -132,97 +51,112 @@ no-code-workflow-platform/
 ├── docker-compose.yml
 └── README.md
 
-How to Run Locally
-Backend
+How the System Works
+
+User builds a workflow visually in the frontend
+Nodes are connected (User Query → LLM → Output)
+User clicks Run Workflow
+Frontend sends workflow graph (nodes + edges) to backend
+Backend parses the graph
+Backend executes each step
+Backend generates a response
+Result is sent back
+UI displays the output
+
+Backend Setup
+
+Step 1: Go to backend folder
 cd backend
+Step 2: Create virtual environment (optional but recommended)
+python -m venv venv
+
+Activate:
+Windows:
+venv\Scripts\activate
+Mac/Linux:
+source venv/bin/activate
+
+Step 3: Install dependencies
 pip install -r requirements.txt
+
+Step 4: Run the backend
 uvicorn app.main:app --reload
 
 
-Backend will run at:
-
+Backend will start at:
 http://127.0.0.1:8000
 
-Frontend
+
+You can test it by opening:
+http://127.0.0.1:8000
+
+Frontend Setup
+
+Step 1: Go to frontend folder
 cd frontend
+
+Step 2: Install dependencies
 npm install
+
+Step 3: Start frontend
 npm start
 
 
 Frontend will run at:
-
 http://localhost:3000
 
-Important Design Decision: No Paid APIs
+How to Use the App
 
-I originally tried integrating real AI APIs (Gemini, OpenAI), but I faced:
+Open frontend in browser
+Add nodes from left panel:
+User Query
+LLM
+Output
 
-Frequent breaking changes
+Connect them in this order:
 
-Version mismatches
+User Query → LLM → Output
+Click each node to configure:
+User Query → Enter text
+LLM → Choose model
+Click Run Workflow
 
-404 errors
+Output will appear in Output node
+Why Mock AI Instead of Real APIs?
+Real AI APIs (OpenAI, Gemini) require:
+API keys
+Billing
+Internet reliability
 
-Billing risks
+To keep this project:
 
-So I designed a Mock AI Engine that:
+Free
+Stable
+Testable
 
-Behaves like a real AI
-
-Is free
-
-Is stable
-
-Can be replaced later with real APIs
-
-This shows real-world engineering thinking: build something stable first, then scale.
-
+I implemented a Mock AI Engine that simulates AI responses.
+This architecture allows replacing mock logic with real APIs later.
 What This Project Demonstrates
-
-Full-stack development
-
-API design
-
-UI/UX thinking
-
 Graph-based execution
-
+No-code UI design
+Backend orchestration
+API design
+Component-based frontend
 Clean architecture
-
 Real-world problem solving
 
-Debugging skills
+One-Line Explanation
 
-Deployment readiness
+I built a no-code workflow system where users visually create logic using nodes, and the backend dynamically executes the workflow to return a response.
 
-One-Line Explanation (for Interviews)
-
-I built a no-code workflow engine where users visually design logic using nodes, and the backend dynamically executes the workflow to produce a chat-style response.
-
-Future Improvements
-
-Real LLM integration (OpenAI / Gemini)
-
-File upload & knowledge base
-
-Authentication
-
-Saving workflows
-
-Export/import
-
+Future Enhancements
+Real AI integration
+File upload / knowledge base
+User authentication
+Workflow saving
 Cloud deployment
-
 Kubernetes support
 
 Author
+Adurthi Mahathi Chinmayee, Built as part of a full-stack engineering assignment to demonstrate system design and real-world development skills.
 
-Built by me as part of a full-stack engineering assignment to demonstrate my understanding of real-world application design.
-
-If you want, I can now:
-
-✅ Customize this with your name
-✅ Add screenshots
-✅ Add architecture diagram
-✅ Add demo instructions
-✅ Make it interview-perfect
